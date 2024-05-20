@@ -1,0 +1,45 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "fortranformat"
+dynamic = ["version"]
+authors = [
+    {name = "Brendan Arnold", email = "brendanarnold@gmail.com"},
+]
+description = "Mimics Fortran textual IO in Python"
+readme = "README.md"
+keywords = ["fortran", "io", "interface", "format"]
+requires-python = ">=3.6"
+license = "MIT"
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Natural Language :: English",
+    "Operating System :: OS Independent",
+    "Programming Language :: Fortran",
+    "Programming Language :: Python :: 3",
+    "Topic :: Software Development :: Interpreters",
+    "Topic :: Scientific/Engineering",
+    "Topic :: Text Processing :: General",
+]
+
+[project.optional-dependencies]
+tests = [
+  "pytest",
+]
+
+[project.urls]
+"Source code" = "https://github.com/brendanarnold/py-fortranformat"
+Guide = "https://github.com/brendanarnold/py-fortranformat/blob/master/docs/wiki/guide.md"
+
+[tool.hatch.build.targets.sdist]
+exclude = [
+  "/tests",
+]
+
+[tool.hatch.version]
+path = "fortranformat/__init__.py"
